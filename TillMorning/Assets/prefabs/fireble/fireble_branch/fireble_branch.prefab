@@ -47,7 +47,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -70,6 +70,7 @@ MonoBehaviour:
   objectInHandOffset: {x: 0.3, y: 0.55, z: 0.7}
   objectInHandRotation: {x: 0, y: -8.5, z: 0}
   objectInHand: {fileID: 1467594752498199487, guid: 16152e90f0e43d843a68aadf2d722c46, type: 3}
+  <InteractionType>k__BackingField: 1
 --- !u!1001 &3880070452332942881
 PrefabInstance:
   m_ObjectHideFlags: 0

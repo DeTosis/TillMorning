@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 2750589443097772112}
-  sensetivityX: 10
-  sensetivityY: 10
+  sensetivityX: 20
+  sensetivityY: 20
   angleClamp: 60
   sineShakeIntensity: 3
   cameraShakeClamp_Y: 0.05
@@ -165,11 +165,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c969963d3575dd042840dd3210b3eb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionPopup: {fileID: 2024377824066024031, guid: c7a8523ed5354a248a775829173dc17b, type: 3}
+  popupData:
+  - popupPrefab: {fileID: 2024377824066024031, guid: c7a8523ed5354a248a775829173dc17b, type: 3}
+    interactType: 1
+  - popupPrefab: {fileID: 2024377824066024031, guid: 4bd87af96fed65c41ba393f859c06327, type: 3}
+    interactType: 2
+  activePopup: {fileID: 0}
   hittedObject: {fileID: 0}
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1048631
+  raycastLength: 3
 --- !u!114 &1617068529020287226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee85caa4f6c79344917ec425d2587a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <objectInHand>k__BackingField: {fileID: 0}
 --- !u!1 &8467066672354208867
 GameObject:
   m_ObjectHideFlags: 0

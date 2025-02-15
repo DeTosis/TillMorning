@@ -5,6 +5,7 @@ public class Interaction_PickUp_ : MonoBehaviour, IInteractable {
     [SerializeField] Vector3 objectInHandOffset;
     [SerializeField] Vector3 objectInHandRotation;
     [SerializeField] GameObject objectInHand;
+    [field:SerializeField] public ObjectInteractionType.InteractionType InteractionType { get; set; }
 
     public void Interact(Transform interactor) {
         CharacterHandData characterHandData;
