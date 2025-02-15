@@ -2,9 +2,11 @@ using UnityEngine;
 
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(FPSCameraController))]
+[RequireComponent(typeof(InteractionController))]
 public class PlayerInputManager : MonoBehaviour {
     MovementController movementControler => GetComponent<MovementController>();
     FPSCameraController cameraController => GetComponent<FPSCameraController>();
+    InteractionController interactionController => GetComponent<InteractionController>();
 
     [Header("Input Settings")]
     [SerializeField] bool canMove = true;
@@ -32,6 +34,7 @@ public class PlayerInputManager : MonoBehaviour {
         inputActions.MainGameActions.Movement.canceled += _ => moveDirection = Vector3.zero;
 
         inputActions.MainGameActions.Jump.performed += _ => movementControler.JumpInput();
+        inputActions.MainGameActions.Interact.performed += _ => interactionController.InteractWithObject();
     }
 
     private void Update() {

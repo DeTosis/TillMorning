@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5029617595122789381}
   - component: {fileID: 6948456213401659733}
   - component: {fileID: 3644073199142138391}
+  - component: {fileID: 5483399721834268935}
+  - component: {fileID: 1617068529020287226}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -151,6 +153,35 @@ MonoBehaviour:
   sineShakeIntensity: 3
   cameraShakeClamp_Y: 0.05
   sineEquPow: 2
+--- !u!114 &5483399721834268935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655529916424672647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c969963d3575dd042840dd3210b3eb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionPopup: {fileID: 2024377824066024031, guid: c7a8523ed5354a248a775829173dc17b, type: 3}
+  hittedObject: {fileID: 0}
+  raycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 1048631
+--- !u!114 &1617068529020287226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655529916424672647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee85caa4f6c79344917ec425d2587a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8467066672354208867
 GameObject:
   m_ObjectHideFlags: 0

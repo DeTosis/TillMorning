@@ -62,6 +62,15 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""85f2d317-a4d2-40ce-80ca-8f33e2d7509f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
                     ""action"": ""LookUp_Y"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54d25728-501b-42af-94af-c8d9cb694377"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +184,7 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
         m_MainGameActions_Jump = m_MainGameActions.FindAction("Jump", throwIfNotFound: true);
         m_MainGameActions_LookUp_X = m_MainGameActions.FindAction("LookUp_X", throwIfNotFound: true);
         m_MainGameActions_LookUp_Y = m_MainGameActions.FindAction("LookUp_Y", throwIfNotFound: true);
+        m_MainGameActions_Interact = m_MainGameActions.FindAction("Interact", throwIfNotFound: true);
     }
 
     ~@CharacterActions()
@@ -234,6 +255,7 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_MainGameActions_Jump;
     private readonly InputAction m_MainGameActions_LookUp_X;
     private readonly InputAction m_MainGameActions_LookUp_Y;
+    private readonly InputAction m_MainGameActions_Interact;
     public struct MainGameActionsActions
     {
         private @CharacterActions m_Wrapper;
@@ -242,6 +264,7 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_MainGameActions_Jump;
         public InputAction @LookUp_X => m_Wrapper.m_MainGameActions_LookUp_X;
         public InputAction @LookUp_Y => m_Wrapper.m_MainGameActions_LookUp_Y;
+        public InputAction @Interact => m_Wrapper.m_MainGameActions_Interact;
         public InputActionMap Get() { return m_Wrapper.m_MainGameActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -263,6 +286,9 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
             @LookUp_Y.started += instance.OnLookUp_Y;
             @LookUp_Y.performed += instance.OnLookUp_Y;
             @LookUp_Y.canceled += instance.OnLookUp_Y;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IMainGameActionsActions instance)
@@ -279,6 +305,9 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
             @LookUp_Y.started -= instance.OnLookUp_Y;
             @LookUp_Y.performed -= instance.OnLookUp_Y;
             @LookUp_Y.canceled -= instance.OnLookUp_Y;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IMainGameActionsActions instance)
@@ -302,5 +331,6 @@ public partial class @CharacterActions: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnLookUp_X(InputAction.CallbackContext context);
         void OnLookUp_Y(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
