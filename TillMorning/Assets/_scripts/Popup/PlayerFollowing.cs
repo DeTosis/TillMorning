@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PopupPlayerFollowing : MonoBehaviour {
+public class PlayerFollowing : MonoBehaviour {
     [SerializeField] Transform objectToFollow;
 
     public void SetTarget(Transform target) {

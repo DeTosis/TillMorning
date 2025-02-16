@@ -53,8 +53,8 @@ public class InteractionController : MonoBehaviour {
         activePopup.transform.position = hittedObject.transform.position;
         activePopup.transform.parent = hittedObject.transform;
 
-        PopupPlayerFollowing followingPopupData;
-        activePopup.TryGetComponent<PopupPlayerFollowing>(out followingPopupData);
+        PlayerFollowing followingPopupData;
+        activePopup.TryGetComponent<PlayerFollowing>(out followingPopupData);
         followingPopupData.SetTarget(transform);
     }
 
